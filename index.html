@@ -1,50 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MS1</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="./styles/index.css" >
+    <link rel="stylesheet" href="./styles/index.css">
 </head>
+
 <body>
-    <header class="container mx-auto">
-        <section id="home">
-            <span>Connectly</span>
-        </section>
-        <section>
-            <a id="profile">Profile</a>
-            <a id="logout">Logout</a>
-        </section>
+    <header class="absolute inset-x-50 top-0 z-50">
+        <nav class="flex items-center justify-between pt-6">
+            <section id="home">
+                <a class="font-bold">Connectly</a>
+            </section>
+            <section class="flex gap-x-12 justify-end">
+                <a id="profile" class="font-semibold">Profile</a>
+                <a id="logout" class="font-semibold">Logout</a>
+            </section>
+        </nav>
     </header>
-    <main class="container mx-auto">
-        <section id="new-post">
-            <form>
-                <textarea></textarea>
+    <main class="container mx-auto my-20">
+        <form>
+            <textarea name="message" class="rounded border-1 w-96 mx-auto flex items-center"></textarea>
+            <div class="flex justify-between items-center w-150 mx-auto">
                 <span>0/250</span>
-                <button type="submit">Post</button>
-            </form>
-        </section>
+                <button type="submit"
+                    class="rounded border-1 font-semibold text-white border-gray-900 bg-blue-500 pt-1 pb-1 pl-2 pr-2">Post</button>
+            </div>
+        </form>
         <section id="posts">
-            <!-- sample post -->
-             <div class="post">
+            
+            <div class="post">
                 <p>Lorem ipsum User's Content</p>
                 <span>username</span>
-             </div>
-             <div class="post">
+                <p>Date Posted</p>
+            </div>
+            
+            <div class="post">
                 <p>Lorem ipsum User's Content</p>
                 <span>username</span>
-             </div>
-             <div class="post">
+                <p>Date Posted</p>
+            </div>
+
+            <div class="post">
                 <p>Lorem ipsum User's Content</p>
                 <span>username</span>
-             </div>
-             <div class="post">
+                <p>Date Posted</p>
+            </div>
+
+            <div class="post">
                 <p>Lorem ipsum User's Content</p>
                 <span>username</span>
-             </div>
-             
+                <p>Date Posted</p>
+            </div>
+
         </section>
     </main>
 </body>
+
 </html>
