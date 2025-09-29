@@ -86,33 +86,6 @@
         </section>
 
         <main class="flex-1 mx-auto flex">
-            <div class="p-5 w-full">
-                <form action="" id="createPost" class="rounded-2xl border-2 border-gray-200 p-4 flex space-x-3">
-                    <div>
-                        <img src="./images/app/profile pic.png" alt="Profile Picture" class="rounded-full w-14">
-                    </div>
-                    <div class="w-full space-y-5">
-                        <textarea name="Message" id="Message" rows="5"
-                            placeholder="Share an update, ask for study help, or connect with fellow students..."
-                            class="flex-1 rounded-xl w-full border-1 bg-gray-50 border-gray-200 p-3"></textarea>
-                        <hr class="border-gray-200 border-1">
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center space-x-6">
-                                <a href="" class="flex items-center space-x-3 rounded hover:bg-gray-300 px-2 py-1">
-                                    <img src="./images/app/Photo.png" alt="Photo Logo" class="w-5">
-                                    <span>Photo</span>
-                                </a>
-                                <a href="" class="flex items-center space-x-3 rounded hover:bg-gray-300 px-2 py-1">
-                                    <img src="./images/app/Calendar.png" alt="Event Logo" class="w-5">
-                                    <span>Event</span>
-                                </a>
-                            </div>
-                            <button type="submit"
-                                class="rounded bg-gray-500 hover:bg-gray-600 px-3 py-1 text-white">Post</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
             <section id="recommendations" class="flex-1 min-w-sm lg:block hidden p-5">
                 <div id="studyGroups" class="rounded border-2 p-3 space-y-3 border-gray-200">
                     <div class="flex justify-center space-x-3">
@@ -177,6 +150,34 @@
                     </div>
                 </div>
             </section>
+            <div class="p-5 w-full">
+                <form action="" id="createPost" class="rounded-2xl border-2 border-gray-200 p-4 flex space-x-3">
+                    <div>
+                        <img src="./images/app/profile pic.png" alt="Profile Picture" class="rounded-full w-14">
+                    </div>
+                    <div class="w-full space-y-5">
+                        <textarea name="Message" id="Message" rows="5"
+                            placeholder="Share an update, ask for study help, or connect with fellow students..."
+                            class="flex-1 rounded-xl w-full border-1 bg-gray-50 border-gray-200 p-3"></textarea>
+                        <hr class="border-gray-200 border-1">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-6">
+                                <a href="" class="flex items-center space-x-3 rounded hover:bg-gray-300 px-2 py-1">
+                                    <img src="./images/app/Photo.png" alt="Photo Logo" class="w-5">
+                                    <span>Photo</span>
+                                </a>
+                                <a href="" class="flex items-center space-x-3 rounded hover:bg-gray-300 px-2 py-1">
+                                    <img src="./images/app/Calendar.png" alt="Event Logo" class="w-5">
+                                    <span>Event</span>
+                                </a>
+                            </div>
+                            <button type="submit"
+                                class="rounded bg-gray-500 hover:bg-gray-600 px-3 py-1 text-white">Post</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            
         </main>
     </div>
 </body>
