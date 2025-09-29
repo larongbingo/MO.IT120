@@ -32,7 +32,7 @@
 
     <div class="flex">
         <section id="sideBar"
-            class="lg:block  hidden h-screen border-r border-border border-gray-200 sticky top-0 p-3 space-y-14">
+            class="md:block  hidden h-screen border-r border-border border-gray-200 sticky top-0 p-3 space-y-14">
             <nav>
                 <ul class="space-y-2">
                     <li>
@@ -85,7 +85,7 @@
             </section>
         </section>
 
-        <main class="flex-1 mx-auto flex">
+        <main class="flex-1 mx-auto flex xl:container xl:mx-auto">
             <div class="p-5 w-full space-y-5">
                 <form action="" id="createPost" class="rounded-2xl border-2 border-gray-200 p-4 flex space-x-3">
                     <div>
@@ -114,6 +114,7 @@
                 </form>
 
                 <section id="posts" class="space-y-5">
+                    <!-- Plain Post -->
                     <div class="rounded-2xl border-2 p-4 space-y-7 border-gray-200">
                         <div class="flex space-x-3">
                             <div>
@@ -138,16 +139,92 @@
                         </p>
                         <hr class="border-gray-200">
                         <div class="space-x-5 pb-3 px-3 flex">
-                            <a href="" class="flex items-center space-x-4">
+                            <a href="" class="flex items-center space-x-4 rounded px-2 py-1 hover:bg-gray-100">
                                 <div><img src="./images/app/Heart.png" alt="Like" class="w-5"></div><span>13</span>
                             </a>
 
-                            <a href="" class="flex items-center space-x-4">
+                            <a href="" class="flex items-center space-x-4 rounded px-2 py-1 hover:bg-gray-100">
                                 <div><img src="./images/app/MessageBubble.png" alt="Comment" class="w-5"></div>
                                 <span>5</span>
                             </a>
 
-                            <a href="" class="flex items-center space-x-4">
+                            <a href="" class="flex items-center space-x-4 rounded px-2 py-1 hover:bg-gray-100">
+                                <div><img src="./images/app/Share.png" alt="Share" class="w-5"></div>
+                                <span>Share</span>
+                            </a>
+
+                        </div>
+                    </div>
+                    <!-- End Plain Post -->
+
+                    <!-- Post with image -->
+                    <div class="rounded-2xl border-2 p-4 space-y-7 border-gray-200">
+                        <div class="flex space-x-3">
+                            <div>
+                                <img src="./images/app/poster 1.png" alt="" class="aspect-square rounded-full w-14">
+                            </div>
+                            <div>
+                                <div class="flex space-x-3">
+                                    <p class="font-semibold text-xl">John Sweeney</p>
+                                    <span class="px-2 py-0.5 rounded bg-gray-100">MMDC</span>
+                                </div>
+                                <p>B.S Computer Science • Senior • Sept 15, 2025</p>
+                            </div>
+                        </div>
+                        <p>
+                            Brainrot Posting
+                        </p>
+                        <img src="./images/app/random post.png" alt="Post" class="rounded-2xl">
+                        <hr class="border-gray-200">
+                        <div class="space-x-5 pb-3 px-3 flex">
+                            <a href="" class="flex items-center space-x-4 rounded px-2 py-1 hover:bg-gray-100">
+                                <div><img src="./images/app/Heart.png" alt="Like" class="w-5"></div><span>13</span>
+                            </a>
+
+                            <a href="" class="flex items-center space-x-4 rounded px-2 py-1 hover:bg-gray-100">
+                                <div><img src="./images/app/MessageBubble.png" alt="Comment" class="w-5"></div>
+                                <span>5</span>
+                            </a>
+
+                            <a href="" class="flex items-center space-x-4 rounded px-2 py-1 hover:bg-gray-100">
+                                <div><img src="./images/app/Share.png" alt="Share" class="w-5"></div>
+                                <span>Share</span>
+                            </a>
+
+                        </div>
+                    </div>
+                    <!-- End Post with image -->
+                  
+
+                    <div class="rounded-2xl border-2 p-4 space-y-7 border-gray-200">
+                        <div class="flex space-x-3">
+                            <div>
+                                <img src="./images/app/poster2.png" alt="" class="aspect-square rounded-full w-14">
+                            </div>
+                            <div>
+                                <div class="flex space-x-3">
+                                    <p class="font-semibold text-xl">Tralalero Tralala</p>
+                                    <span class="px-2 py-0.5 rounded bg-gray-100">MMDC</span>
+                                </div>
+                                <p>B.S Computer Science • Senior • Sept 15, 2025</p>
+                            </div>
+                        </div>
+                        <p>
+                            Scuffed Coding
+                        </p>
+                        <img src="./images/app/random post 2.png" alt="Post" class="rounded-2xl">
+                        <hr class="border-gray-200">
+                        <div class="space-x-5 pb-3 px-3 flex">
+                            <a href="" class="flex items-center space-x-4 rounded px-2 py-1 hover:bg-gray-100">
+                                <div><img src="./images/app/Heart.png" alt="Like" class="w-5"></div><span>13</span>
+                            </a>
+
+                            <a href="" class="flex items-center space-x-4 rounded px-2 py-1 hover:bg-gray-100">
+                                <div><img src="./images/app/MessageBubble.png" alt="Comment" class="w-5"></div>
+                                <span>5</span>
+                            </a>
+
+                            <a href="" class="flex items-center space-x-4 rounded px-2 py-1 hover:bg-gray-100">
                                 <div><img src="./images/app/Share.png" alt="Share" class="w-5"></div>
                                 <span>Share</span>
                             </a>
@@ -158,119 +235,31 @@
                     <div class="rounded-2xl border-2 p-4 space-y-7 border-gray-200">
                         <div class="flex space-x-3">
                             <div>
-                                <img src="./images/app/poster 1.png" alt="" class="aspect-square rounded-full w-14">
+                                <img src="./images/app/poster 3.png" alt="" class="aspect-square rounded-full w-14">
                             </div>
                             <div>
                                 <div class="flex space-x-3">
-                                    <p class="font-semibold text-xl">John Sweeney</p>
+                                    <p class="font-semibold text-xl">Mark Daniels</p>
                                     <span class="px-2 py-0.5 rounded bg-gray-100">MMDC</span>
                                 </div>
                                 <p>B.S Computer Science • Senior • Sept 15, 2025</p>
                             </div>
                         </div>
                         <p>
-                            Calc got you crying in limits? 😩 Pull up to our study group—we’re grinding through
-                            derivatives, integrals & exam prep together.
-
-                            <br>📍 Library Room B <br> 🕓 Wed & Fri, 4–6 PM <br> 🍪 Snacks + good vibes <br>
-
-                            All levels welcome. DM to join the group chat! <br> #CalculusCrew #StudyTogether
-                            #MathIsHardButWeGotThis
+                            Bro, the people be posting be memes, these people are cooked.  😭😭😭😭😭
                         </p>
                         <hr class="border-gray-200">
                         <div class="space-x-5 pb-3 px-3 flex">
-                            <a href="" class="flex items-center space-x-4">
+                            <a href="" class="flex items-center space-x-4 rounded px-2 py-1 hover:bg-gray-100">
                                 <div><img src="./images/app/Heart.png" alt="Like" class="w-5"></div><span>13</span>
                             </a>
 
-                            <a href="" class="flex items-center space-x-4">
+                            <a href="" class="flex items-center space-x-4 rounded px-2 py-1 hover:bg-gray-100">
                                 <div><img src="./images/app/MessageBubble.png" alt="Comment" class="w-5"></div>
                                 <span>5</span>
                             </a>
 
-                            <a href="" class="flex items-center space-x-4">
-                                <div><img src="./images/app/Share.png" alt="Share" class="w-5"></div>
-                                <span>Share</span>
-                            </a>
-
-                        </div>
-                    </div>
-
-                    <div class="rounded-2xl border-2 p-4 space-y-7 border-gray-200">
-                        <div class="flex space-x-3">
-                            <div>
-                                <img src="./images/app/poster 1.png" alt="" class="aspect-square rounded-full w-14">
-                            </div>
-                            <div>
-                                <div class="flex space-x-3">
-                                    <p class="font-semibold text-xl">John Sweeney</p>
-                                    <span class="px-2 py-0.5 rounded bg-gray-100">MMDC</span>
-                                </div>
-                                <p>B.S Computer Science • Senior • Sept 15, 2025</p>
-                            </div>
-                        </div>
-                        <p>
-                            Calc got you crying in limits? 😩 Pull up to our study group—we’re grinding through
-                            derivatives, integrals & exam prep together.
-
-                            <br>📍 Library Room B <br> 🕓 Wed & Fri, 4–6 PM <br> 🍪 Snacks + good vibes <br>
-
-                            All levels welcome. DM to join the group chat! <br> #CalculusCrew #StudyTogether
-                            #MathIsHardButWeGotThis
-                        </p>
-                        <hr class="border-gray-200">
-                        <div class="space-x-5 pb-3 px-3 flex">
-                            <a href="" class="flex items-center space-x-4">
-                                <div><img src="./images/app/Heart.png" alt="Like" class="w-5"></div><span>13</span>
-                            </a>
-
-                            <a href="" class="flex items-center space-x-4">
-                                <div><img src="./images/app/MessageBubble.png" alt="Comment" class="w-5"></div>
-                                <span>5</span>
-                            </a>
-
-                            <a href="" class="flex items-center space-x-4">
-                                <div><img src="./images/app/Share.png" alt="Share" class="w-5"></div>
-                                <span>Share</span>
-                            </a>
-
-                        </div>
-                    </div>
-
-                    <div class="rounded-2xl border-2 p-4 space-y-7 border-gray-200">
-                        <div class="flex space-x-3">
-                            <div>
-                                <img src="./images/app/poster 1.png" alt="" class="aspect-square rounded-full w-14">
-                            </div>
-                            <div>
-                                <div class="flex space-x-3">
-                                    <p class="font-semibold text-xl">John Sweeney</p>
-                                    <span class="px-2 py-0.5 rounded bg-gray-100">MMDC</span>
-                                </div>
-                                <p>B.S Computer Science • Senior • Sept 15, 2025</p>
-                            </div>
-                        </div>
-                        <p>
-                            Calc got you crying in limits? 😩 Pull up to our study group—we’re grinding through
-                            derivatives, integrals & exam prep together.
-
-                            <br>📍 Library Room B <br> 🕓 Wed & Fri, 4–6 PM <br> 🍪 Snacks + good vibes <br>
-
-                            All levels welcome. DM to join the group chat! <br> #CalculusCrew #StudyTogether
-                            #MathIsHardButWeGotThis
-                        </p>
-                        <hr class="border-gray-200">
-                        <div class="space-x-5 pb-3 px-3 flex">
-                            <a href="" class="flex items-center space-x-4">
-                                <div><img src="./images/app/Heart.png" alt="Like" class="w-5"></div><span>13</span>
-                            </a>
-
-                            <a href="" class="flex items-center space-x-4">
-                                <div><img src="./images/app/MessageBubble.png" alt="Comment" class="w-5"></div>
-                                <span>5</span>
-                            </a>
-
-                            <a href="" class="flex items-center space-x-4">
+                            <a href="" class="flex items-center space-x-4 rounded px-2 py-1 hover:bg-gray-100">
                                 <div><img src="./images/app/Share.png" alt="Share" class="w-5"></div>
                                 <span>Share</span>
                             </a>
