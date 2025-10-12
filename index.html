@@ -1,91 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connectly App - MS1</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles/index.css">
-    <link rel="icon" type="image/x-icon" href="./favicon.ico">
-</head>
-
-<body>
-    <header class="bg-gray-400">
-        <nav class="flex flex-wrap items-center justify-between mx-auto p-4">
-            <a href="/" class="flex items-center space-x-5">
-                <img src="./images/Logo.png" alt="Connectly Logo" width="40">
-                <h5 class="text-xl">Connectly</h5>
-            </a>
-
-            <ul class="flex items-center space-x-5">
-                <li>
-                    <a href="./app.html">Sign In</a>
-                </li>
-                <li>
-                    <a href="./app.html" class="text-white bg-gray-800 hover:bg-gray-950 p-2 rounded">Get Started</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section id="heroSection" class="container mx-auto lg:flex lg:items-center lg:justify-between pt-56 pb-56 m-5">
-            <div>
-                <h2 class="font-bold text-6xl pb-3">Connect, Study and Thrive Together</h2>
-                <p class="text-2xl">The social platform built for students. Find study partners, join campus events, and build meaningful connections that last beyond graduation.</p>
-                <nav class="flex items-center space-x-10 mt-10">
-                    <a href="./app.html" class="text-white rounded bg-gray-800 hover:bg-gray-950 pt-2 pb-2 pl-4 pr-4 flex items-center space-x-2">
-                        <span>Join Connectly</span>
-                        <img src="./images/RightArrow.png" class="h-3.5">
-                    </a>
-                    <a href="#" class="rounded outline-2 outline-gray-400 bg-gray-200 hover:bg-gray-400 pt-2 pb-2 pl-4 pr-4 flex items-center space-x-2">
-                        <img src="./images/Play.png" class="h-3.5">
-                        <span>Watch Demo</span>
-                    </a>
-                </nav>
-            </div>
-            <img src="./images/hero section image.png" alt="Students studying" class="rounded shadow-2xl w-5xl lg:mt-0 mt-10">
-        </section>
-
-        <section id="featuresSection" class="bg-gray-300 pt-52 pb-52">
-            <h2 class="text-center font-bold text-3xl">Everything you need to succeed</h2>
-            <p class="text-center font-medium text-xl p-3">Connectly brings together all the tools and connections you need to excel in your academic journey.</p>
-            
-            <div class="lg:flex lg:items-center container mx-auto">
-                <div class="bg-white rounded m-10 p-10 space-y-3 min-h-60">
-                    <img src="./images/Users Logo.png" class="w-10">
-                    <h4 class="font-medium text-xl">Study Groups</h4>
-                    <p>Find and create study groups for your classes. Connect with classmates who share your academic goals.</p>
-                </div>
-                <div class="bg-white rounded m-10 p-10 space-y-3 min-h-60">
-                    <img src="./images/Lightning Logo.png" class="w-10">
-                    <h4 class="font-medium text-xl">Quick Connections</h4>
-                    <p>Instantly connect with students in your major or classes. Build your academic network effortlessly.</p>
-                </div>
-                <div class="bg-white rounded m-10 p-10 space-y-3 min-h-60">
-                    <img src="./images/Book Logo.png" class="w-10">
-                    <h4 class="font-medium text-xl">Course Communities</h4>
-                    <p>Join communities for your specific courses. Share notes, ask questions, and collaborate on projects.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="contactUsSection" class="bg-black pt-32 pb-32">
-            <div class="container mx-auto lg:flex lg:items-center pb-10">
-                <div class="text-white xl:mr-56 space-y-3">
-                    <h4 class="text-4xl font-bold">Ready to transform your college experience?</h4>
-                    <p class="text-xl">Join Connectly today and discover a community of motivated students ready to support your academic journey.</p>
-                    <form class="space-x-5">
-                        <input type="email" name="email" id="email" placeholder="Email Address" class="rounded-3xl text-black m-2 w-sm">
-                        <button type="submit" class="rounded-lg bg-white text-black m-2 pt-1 pb-1 pl-2 pr-2">Contact Us</button>
-                    </form>
-                </div>
-                <img src="./images/contact us section.png" class="rounded-2xl w-full mt-10">
-            </div>
-        </section>
-    </main>
-</body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>connectly</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
