@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar.tsx";
 import userLogo from "/Users Logo.png";
 import lightningLogo from "/Lightning Logo.png";
 import bookLogo from "/Book Logo.png";
+import contactUsImage from "/contact us section.png";
 
 function LandingPage() {
     return (
@@ -98,13 +99,13 @@ function ContactUsSection() {
                         support your academic journey.</p>
                     <form className="space-x-5">
                         <input type="email" name="email" id="email" placeholder="Email Address"
-                               className="rounded-3xl text-black m-2 w-sm"/>
+                               className="rounded-3xl text-black m-2 w-sm bg-gray-100 px-1.5 py-1 "/>
                         <button type="submit" className="rounded-lg bg-white text-black m-2 pt-1 pb-1 pl-2 pr-2">Contact
                             Us
                         </button>
                     </form>
                 </div>
-                <img src="./images/contact us section.png" className="rounded-2xl w-full mt-10"/>
+                <img src={contactUsImage} className="rounded-2xl w-full mt-10"/>
             </div>
         </section>
     )
