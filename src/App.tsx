@@ -1,12 +1,14 @@
-import Navbar from "./components/Navbar";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import LandingPage from "./pages/LandingPage.tsx";
 
 function App() {
-  return (
-    <>
-        <Navbar isLoggedIn={true} />
-        <h1>Hello World</h1>
-    </>
-  )
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<LandingPage />} />
+            </Routes>
+        </BrowserRouter>
+    );
 }
 
 export default App
