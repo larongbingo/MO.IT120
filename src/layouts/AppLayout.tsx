@@ -15,10 +15,10 @@ function AppLayout() {
             <Navbar homeRoute="/app">
                 <ul className="flex items-center space-x-5">
                     <li>
-                        <a href="#">
+                        <Link to="/app/profile">
                             <img src={profilePicture} alt="Profile Picture"
                                  className="rounded-full w-14"/>
-                        </a>
+                        </Link>
                     </li>
                     <li>
                         <Link to="/">Logout</Link>
