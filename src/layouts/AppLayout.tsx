@@ -7,6 +7,7 @@ import messageLogo from "/Message.png";
 import userLogo from "/User.png";
 import {Link, Outlet} from "react-router-dom";
 import ScheduleCard, {type Schedule} from "../components/app/ScheduleCard.tsx";
+import {useState} from "react";
 
 function AppLayout() {
     return (
@@ -34,41 +35,51 @@ function AppLayout() {
     )
 }
 
+type NavigationSelection = "Home" | "Study Groups" | "Course Communities" | "Messages" | "Profile";
 function NavigationItems() {
+    const [selected, setSelected] = useState<NavigationSelection>("Home");
+    const selectedClassNames = `bg-gray-100 rounded hover:bg-gray-300 flex items-center space-x-3 px-2 py-1`;
+    const unselectedClassNames = `rounded hover:bg-gray-300 flex items-center space-x-3 px-2 py-1`;
+
     return (
         <nav>
             <ul className="space-y-2">
                 <li>
-                    <Link to="./app.html"
-                          className="bg-gray-100 rounded hover:bg-gray-300 flex items-center space-x-3 px-2 py-1">
+                    <Link to="/app"
+                          onClick={() => { setSelected("Home") }}
+                          className={selected === "Home" ? selectedClassNames : unselectedClassNames}>
                         <img src={homeLogo} alt="Home Logo" className="w-5"/>
                         <span className="">Home</span>
                     </Link>
                 </li>
                 <li>
-                    <Link to="#"
-                          className="rounded hover:bg-gray-300 flex items-center space-x-3 px-2 py-1">
+                    <Link to="/app/studygroups"
+                          onClick={() => { setSelected("Study Groups") }}
+                          className={selected === "Study Groups" ? selectedClassNames : unselectedClassNames}>
                         <img src={usersLogo} alt="Study Groups Logo" className="w-5"/>
                         <span>Study Groups</span>
                     </Link>
                 </li>
                 <li>
-                    <Link to=""
-                          className="rounded hover:bg-gray-300 flex items-center space-x-3 px-2 py-1">
+                    <Link to="/app/coursecommunities"
+                          onClick={() => { setSelected("Course Communities") }}
+                          className={selected === "Course Communities" ? selectedClassNames : unselectedClassNames}>
                         <img src={bookLogo} alt="Course Communities Logo" className="w-5"/>
                         <span>Course Communities</span>
                     </Link>
                 </li>
                 <li>
-                    <Link to=""
-                          className="rounded hover:bg-gray-300 flex items-center space-x-3 px-2 py-1">
+                    <Link to="/app/messages"
+                          onClick={() => { setSelected("Messages") }}
+                          className={selected === "Messages" ? selectedClassNames : unselectedClassNames}>
                         <img src={messageLogo} alt="Messages Logo" className="w-5"/>
                         <span>Messages</span>
                     </Link>
                 </li>
                 <li>
-                    <Link to=""
-                          className="rounded hover:bg-gray-300 flex items-center space-x-3 px-2 py-1">
+                    <Link to="/app/profile"
+                          onClick={() => { setSelected("Profile") }}
+                          className={selected === "Profile" ? selectedClassNames : unselectedClassNames}>
                         <img src={userLogo} alt="Profile Logo" className="w-5"/>
                         <span>Profile</span>
                     </Link>
