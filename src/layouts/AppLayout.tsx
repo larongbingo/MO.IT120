@@ -5,9 +5,9 @@ import usersLogo from "/Users.png";
 import bookLogo from "/Book.png";
 import messageLogo from "/Message.png";
 import userLogo from "/User.png";
-import {Link, Outlet} from "react-router-dom";
+import {Link, Outlet, useLocation} from "react-router-dom";
 import ScheduleCard, {type Schedule} from "../components/app/ScheduleCard.tsx";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 function AppLayout() {
     return (
@@ -37,16 +37,34 @@ function AppLayout() {
 
 type NavigationSelection = "Home" | "Study Groups" | "Course Communities" | "Messages" | "Profile";
 function NavigationItems() {
+    const location = useLocation();
     const [selected, setSelected] = useState<NavigationSelection>("Home");
     const selectedClassNames = `bg-gray-100 rounded hover:bg-gray-300 flex items-center space-x-3 px-2 py-1`;
     const unselectedClassNames = `rounded hover:bg-gray-300 flex items-center space-x-3 px-2 py-1`;
+
+    useEffect(() => {
+        if (location.pathname.includes("studygroups")) {
+            setSelected("Study Groups");
+        }
+        else if (location.pathname.includes("coursecommunities")) {
+            setSelected("Course Communities");
+        }
+        else if (location.pathname.includes("messages")) {
+            setSelected("Messages");
+        }
+        else if (location.pathname.includes("profile")) {
+            setSelected("Profile");
+        }
+        else {
+            setSelected("Home");
+        }
+    }, [location])
 
     return (
         <nav>
             <ul className="space-y-2">
                 <li>
                     <Link to="/app"
-                          onClick={() => { setSelected("Home") }}
                           className={selected === "Home" ? selectedClassNames : unselectedClassNames}>
                         <img src={homeLogo} alt="Home Logo" className="w-5"/>
                         <span className="">Home</span>
@@ -54,7 +72,6 @@ function NavigationItems() {
                 </li>
                 <li>
                     <Link to="/app/studygroups"
-                          onClick={() => { setSelected("Study Groups") }}
                           className={selected === "Study Groups" ? selectedClassNames : unselectedClassNames}>
                         <img src={usersLogo} alt="Study Groups Logo" className="w-5"/>
                         <span>Study Groups</span>
@@ -62,7 +79,6 @@ function NavigationItems() {
                 </li>
                 <li>
                     <Link to="/app/coursecommunities"
-                          onClick={() => { setSelected("Course Communities") }}
                           className={selected === "Course Communities" ? selectedClassNames : unselectedClassNames}>
                         <img src={bookLogo} alt="Course Communities Logo" className="w-5"/>
                         <span>Course Communities</span>
@@ -70,7 +86,6 @@ function NavigationItems() {
                 </li>
                 <li>
                     <Link to="/app/messages"
-                          onClick={() => { setSelected("Messages") }}
                           className={selected === "Messages" ? selectedClassNames : unselectedClassNames}>
                         <img src={messageLogo} alt="Messages Logo" className="w-5"/>
                         <span>Messages</span>
@@ -78,7 +93,6 @@ function NavigationItems() {
                 </li>
                 <li>
                     <Link to="/app/profile"
-                          onClick={() => { setSelected("Profile") }}
                           className={selected === "Profile" ? selectedClassNames : unselectedClassNames}>
                         <img src={userLogo} alt="Profile Logo" className="w-5"/>
                         <span>Profile</span>
