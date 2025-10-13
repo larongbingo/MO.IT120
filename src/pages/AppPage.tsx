@@ -1,96 +1,47 @@
-﻿import Navbar from "../components/Navbar.tsx";
-import profilePicture from "/profile pic.png";
-import homeLogo from "/Home.png";
-import usersLogo from "/Users.png";
-import bookLogo from "/Book.png";
-import messageLogo from "/Message.png";
-import userLogo from "/User.png";
-import {Link} from "react-router-dom";
-import ScheduleCard, {type Schedule} from "../components/app/ScheduleCard.tsx";
+﻿import profilePicture from "/profile pic.png";
+import photo from "/Photo.png";
+import calendar from "/Calendar.png";
 
 function AppPage() {
     return (
-        <>
-            <Navbar homeRoute="/app">
-                <ul className="flex items-center space-x-5">
-                    <li>
-                        <a href="#">
-                            <img src={profilePicture} alt="Profile Picture"
-                                 className="rounded-full w-14"/>
-                        </a>
-                    </li>
-                    <li>
-                        <Link to="/">Logout</Link>
-                    </li>
-                </ul>
-            </Navbar>
-
-
-            <div className="flex">
-                <SideBar/>
+        <main className="flex-1 mx-auto flex xl:container xl:mx-auto">
+            <div className="p-5 w-full space-y-5">
+                <AddPostForm/>
             </div>
-        </>
+        </main>
     )
 }
 
-function NavigationItems() {
+function AddPostForm() {
     return (
-        <nav>
-            <ul className="space-y-2">
-                <li>
-                    <Link to="./app.html"
-                          className="bg-gray-100 rounded hover:bg-gray-300 flex items-center space-x-3 px-2 py-1">
-                        <img src={homeLogo} alt="Home Logo" className="w-5"/>
-                        <span className="">Home</span>
-                    </Link>
-                </li>
-                <li>
-                    <Link to="#"
-                          className="rounded hover:bg-gray-300 flex items-center space-x-3 px-2 py-1">
-                        <img src={usersLogo} alt="Study Groups Logo" className="w-5"/>
-                        <span>Study Groups</span>
-                    </Link>
-                </li>
-                <li>
-                    <Link to=""
-                          className="rounded hover:bg-gray-300 flex items-center space-x-3 px-2 py-1">
-                        <img src={bookLogo} alt="Course Communities Logo" className="w-5"/>
-                        <span>Course Communities</span>
-                    </Link>
-                </li>
-                <li>
-                    <Link to=""
-                          className="rounded hover:bg-gray-300 flex items-center space-x-3 px-2 py-1">
-                        <img src={messageLogo} alt="Messages Logo" className="w-5"/>
-                        <span>Messages</span>
-                    </Link>
-                </li>
-                <li>
-                    <Link to=""
-                          className="rounded hover:bg-gray-300 flex items-center space-x-3 px-2 py-1">
-                        <img src={userLogo} alt="Profile Logo" className="w-5"/>
-                        <span>Profile</span>
-                    </Link>
-                </li>
-            </ul>
-        </nav>
+        <form action="" id="createPost" className="rounded-2xl border-2 border-gray-200 p-4 flex space-x-3">
+            <div>
+                <img src={profilePicture} alt="Profile Picture" className="rounded-full w-14"/>
+            </div>
+            <div className="w-full space-y-5">
+                        <textarea name="Message" id="Message" rows={5}
+                                  placeholder="Share an update, ask for study help, or connect with fellow students..."
+                                  className="flex-1 rounded-xl w-full border-1 bg-gray-50 border-gray-200 p-3"></textarea>
+                <hr className="border-gray-200 border-1"/>
+                <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-6">
+                        <a href="" className="flex items-center space-x-3 rounded hover:bg-gray-300 px-2 py-1">
+                            <img src={photo} alt="Photo Logo" className="w-5"/>
+                            <span>Photo</span>
+                        </a>
+                        <a href="" className="flex items-center space-x-3 rounded hover:bg-gray-300 px-2 py-1">
+                            <img src={calendar} alt="Event Logo" className="w-5"/>
+                            <span>Event</span>
+                        </a>
+                    </div>
+                    <button type="submit"
+                            className="rounded bg-gray-500 hover:bg-gray-600 px-3 py-1 text-white">Post
+                    </button>
+                </div>
+            </div>
+        </form>
     )
 }
 
-function SideBar() {
-    const today = new Date();
-    const schedule: Schedule[] = [
-        { date: new Date(today.setHours(2)), event: "Computer Science Study Group" },
-        { date: new Date(today.setHours(3)), event: "Math Study Group" },
-        { date: new Date(today.setHours(5)), event: "Physics Study Group" },
-    ];
-
-    return (
-        <section className="md:block hidden h-screen border-r border-border border-gray-200 sticky top-0 p-3 space-y-14">
-            <NavigationItems/>
-            <ScheduleCard schedule={schedule}/>
-        </section>
-    )
-}
 
 export default AppPage;
