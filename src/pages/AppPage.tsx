@@ -51,7 +51,7 @@ function AddPostForm() {
 interface User {
     name: string,
     course: string,
-    year: string | undefined,
+    year?: string | undefined,
     profilePicture: string,
     affiliation: string,
 }
@@ -59,7 +59,7 @@ interface PostProps {
     id: number,
     user: User,
     post: string,
-    image: string | undefined,
+    image?: string | undefined,
     likes: number,
     comments: number,
     datePosted: Date,
