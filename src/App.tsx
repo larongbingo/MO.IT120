@@ -1,11 +1,11 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import LandingPage from "./pages/LandingPage.tsx";
-import AppPage from "./pages/AppPage.tsx";
-import AppLayout from "./layouts/AppLayout.tsx";
-import StudyGroupsPage from "./pages/StudyGroupsPage.tsx";
-import CourseCommunitiesPage from "./pages/CourseCommunitiesPage.tsx";
-import MessagesPage from "./pages/MessagesPage.tsx";
-import ProfilePage from "./pages/ProfilePage.tsx";
+import LandingPage from "./landing/LandingPage.tsx";
+import AppPage from "./app/AppPage.tsx";
+import AppLayout from "./app/layouts/AppLayout.tsx";
+import StudyGroupsPage from "./app/StudyGroupsPage.tsx";
+import CourseCommunitiesPage from "./app/CourseCommunitiesPage.tsx";
+import MessagesPage from "./app/MessagesPage.tsx";
+import ProfilePage from "./app/ProfilePage.tsx";
 
 function App() {
     return (
