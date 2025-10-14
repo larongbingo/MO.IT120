@@ -1,12 +1,12 @@
 ﻿import { Link } from "react-router-dom";
-import rightArrow from "/RightArrow.png";
-import play from "/Play.png";
-import heroSectionImage from "/hero section image.png";
+import rightArrow from "../assets/RightArrow.png";
+import play from "../assets/Play.png";
+import heroSectionImage from "../assets/hero section image.png";
 import Navbar from "../components/Navbar.tsx";
-import userLogo from "/Users Logo.png";
-import lightningLogo from "/Lightning Logo.png";
-import bookLogo from "/Book Logo.png";
-import contactUsImage from "/contact us section.png";
+import userLogo from "../assets/Users Logo.png";
+import lightningLogo from "../assets/Lightning Logo.png";
+import bookLogo from "../assets/Book Logo.png";
+import contactUsImage from "../assets/contact us section.png";
 
 function LandingPage() {
     return (

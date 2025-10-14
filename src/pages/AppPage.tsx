@@ -1,10 +1,10 @@
-﻿import profilePicture from "/profile pic.png";
-import photo from "/Photo.png";
-import calendar from "/Calendar.png";
-import heart from "/Heart.png";
-import messageBubble from "/MessageBubble.png";
-import share from "/Share.png";
-import user from "/User.png";
+﻿import profilePicture from "../assets/profile pic.png";
+import photo from "../assets/Photo.png";
+import calendar from "../assets/Calendar.png";
+import heart from "../assets/Heart.png";
+import messageBubble from "../assets/MessageBubble.png";
+import share from "../assets/Share.png";
+import user from "../assets/User.png";
 
 function AppPage() {
     return (

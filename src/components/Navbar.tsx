@@ -1,4 +1,4 @@
-﻿import connectlyLogo from "/Logo.png";
+﻿import connectlyLogo from "../assets/Logo.png";
 import * as React from "react";
 import {Link} from "react-router-dom";
 

@@ -1,10 +1,10 @@
 ﻿import Navbar from "../components/Navbar.tsx";
-import profilePicture from "/profile pic.png";
-import homeLogo from "/Home.png";
-import usersLogo from "/Users.png";
-import bookLogo from "/Book.png";
-import messageLogo from "/Message.png";
-import userLogo from "/User.png";
+import profilePicture from "../assets/profile pic.png";
+import homeLogo from "../assets/Home.png";
+import usersLogo from "../assets/Users.png";
+import bookLogo from "../assets/Book.png";
+import messageLogo from "../assets/Message.png";
+import userLogo from "../assets/User.png";
 import {Link, Outlet, useLocation} from "react-router-dom";
 import ScheduleCard, {type Schedule} from "../components/app/ScheduleCard.tsx";
 import {useEffect, useState} from "react";
