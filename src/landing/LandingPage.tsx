@@ -35,7 +35,7 @@ function HeroSection() {
     return (
         <section id="heroSection"
                  className="container mx-auto lg:flex lg:items-center lg:justify-between pt-56 pb-56 m-5">
-        <div>
+            <div>
                 <h2 className="font-bold text-6xl pb-3">Connect, Study and Thrive Together</h2>
                 <p className="text-2xl">The social platform built for students. Find study partners, join campus events,
                     and build meaningful connections that last beyond graduation.</p>
