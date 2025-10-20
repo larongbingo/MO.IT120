@@ -15,7 +15,7 @@ function ScheduleCard({ schedule = [] }: ScheduleCardProps) {
         minute: 'numeric',
     })
     return (
-        <section id="upcomingEvents" className="rounded-2xl border-2 border-gray-200 space-y-3 p-3 w-2xs">
+        <section id="upcomingEvents" className="rounded-2xl border-2 border-gray-200 space-y-3 p-3 w-3xs">
             <h4 className="font-semibold text-lg">Upcoming Events</h4>
 
             <div className="space-y-3">
