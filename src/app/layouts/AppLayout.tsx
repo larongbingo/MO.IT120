@@ -7,7 +7,6 @@ import messageLogo from "../../assets/Message.png";
 import userLogo from "../../assets/User.png";
 import {Link, Outlet, useLocation} from "react-router-dom";
 import ScheduleCard, {type Schedule} from "../components/ScheduleCard.tsx";
-import {useEffect, useState} from "react";
 
 function AppLayout() {
     return (
@@ -37,28 +36,18 @@ function AppLayout() {
 
 type NavigationSelection = "Home" | "Study Groups" | "Course Communities" | "Messages" | "Profile";
 function NavigationItems() {
-    const location = useLocation();
-    const [selected, setSelected] = useState<NavigationSelection>("Home");
     const selectedClassNames = `bg-gray-100 rounded hover:bg-gray-300 flex items-center space-x-3 px-2 py-1`;
     const unselectedClassNames = `rounded hover:bg-gray-300 flex items-center space-x-3 px-2 py-1`;
 
-    useEffect(() => {
-        if (location.pathname.includes("studygroups")) {
-            setSelected("Study Groups");
-        }
-        else if (location.pathname.includes("coursecommunities")) {
-            setSelected("Course Communities");
-        }
-        else if (location.pathname.includes("messages")) {
-            setSelected("Messages");
-        }
-        else if (location.pathname.includes("profile")) {
-            setSelected("Profile");
-        }
-        else {
-            setSelected("Home");
-        }
-    }, [location])
+    const location = useLocation();
+    const getSelected = (): NavigationSelection => {
+        if (location.pathname.includes("studygroups")) return "Study Groups";
+        if (location.pathname.includes("coursecommunities")) return "Course Communities";
+        if (location.pathname.includes("messages")) return "Messages";
+        if (location.pathname.includes("profile")) return "Profile";
+        return "Home";
+    };
+    const selected = getSelected();
 
     return (
         <nav>
