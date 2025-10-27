@@ -1,7 +1,7 @@
-import heart from "../assets/Heart.png";
-import messageBubble from "../assets/MessageBubble.png";
-import share from "../assets/Share.png";
-import userPhoto from "../assets/User.png";
+import heart from "../../assets/Heart.png";
+import messageBubble from "../../assets/MessageBubble.png";
+import share from "../../assets/Share.png";
+import userPhoto from "../../assets/User.png";
 
 interface User {
     name: string,
