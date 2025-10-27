@@ -2,6 +2,7 @@
 import photo from "../assets/Photo.png";
 import calendar from "../assets/Calendar.png";
 import Posts from "./components/Post";
+import SuggestionsSidebar from "./components/SuggestionsSidebar.tsx";
 
 
 function AppPage() {
@@ -11,6 +12,7 @@ function AppPage() {
                 <AddPostForm/>
                 <Posts />
             </div>
+            <SuggestionsSidebar/>
         </main>
     )
 }
@@ -45,7 +47,5 @@ function AddPostForm() {
         </form>
     )
 }
-
-
 
 export default AppPage;
