@@ -1,5 +1,4 @@
-﻿import React from "react";
-import profilePicture from "../assets/profile pic.png";
+﻿import profilePicture from "../assets/profile pic.png";
 import calendarIcon from "../assets/Calendar.png";
 import Posts from "./components/Post";
 import type { PostProps } from "./components/Post";
