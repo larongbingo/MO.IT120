@@ -7,18 +7,23 @@ import userLogo from "../assets/Users Logo.png";
 import lightningLogo from "../assets/Lightning Logo.png";
 import bookLogo from "../assets/Book Logo.png";
 import contactUsImage from "../assets/contact us section.png";
+import { useGoogleLogin } from "@react-oauth/google";
 
 function LandingPage() {
+    const login = useGoogleLogin({
+        onSuccess: tokenResponse => console.log(tokenResponse),
+        onError: (err) => console.log(err),
+        onNonOAuthError: err => console.log(err),
+    });
+    
     return (
         <>
             <Navbar homeRoute="/">
                 <ul className="flex items-center space-x-5">
                     <li>
-                        <Link to="/app">Sign In</Link>
-                    </li>
-                    <li>
-                        <Link to="/app" className="text-white bg-gray-800 hover:bg-gray-950 p-2 rounded">Get
-                            Started</Link>
+                        <a href="#" onClick={() => login()}>
+                            Sign In
+                        </a>
                     </li>
                 </ul>
             </Navbar>
