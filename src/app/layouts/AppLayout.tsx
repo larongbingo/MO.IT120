@@ -69,13 +69,6 @@ function NavigationItems() {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/app/coursecommunities"
-                          className={selected === "Course Communities" ? selectedClassNames : unselectedClassNames}>
-                        <img src={bookLogo} alt="Course Communities Logo" className="w-5"/>
-                        <span>Course Communities</span>
-                    </Link>
-                </li>
-                <li>
                     <Link to="/app/messages"
                           className={selected === "Messages" ? selectedClassNames : unselectedClassNames}>
                         <img src={messageLogo} alt="Messages Logo" className="w-5"/>
