@@ -7,8 +7,11 @@ import messageLogo from "../../assets/Message.png";
 import userLogo from "../../assets/User.png";
 import {Link, Outlet, useLocation} from "react-router-dom";
 import ScheduleCard, {type Schedule} from "../components/ScheduleCard.tsx";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function AppLayout() {
+    const { logout } = useAuth0();
+
     return (
         <>
             <Navbar homeRoute="/app">
@@ -20,7 +23,7 @@ function AppLayout() {
                         </Link>
                     </li>
                     <li>
-                        <Link to="/">Logout</Link>
+                        <a href="#" onClick={() => logout()}>Logout</a>
                     </li>
                 </ul>
             </Navbar>
