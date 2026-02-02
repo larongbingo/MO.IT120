@@ -37,6 +37,7 @@ function AppPage() {
     )
 }
 
+function AddPostForm({ onAdd }: { onAdd: (content: string, imageBase64?: string) => void }) {
     const { user } = useAuth0();
     const [content, setContent] = useState("");
     const [imageBase64, setImageBase64] = useState<string | undefined>(undefined);
