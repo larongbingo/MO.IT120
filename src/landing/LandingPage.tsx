@@ -1,4 +1,4 @@
-﻿import { Link } from "react-router-dom";
+﻿import { Link, useNavigate } from "react-router-dom";
 import rightArrow from "../assets/RightArrow.png";
 import play from "../assets/Play.png";
 import heroSectionImage from "../assets/hero section image.png";
@@ -7,18 +7,20 @@ import userLogo from "../assets/Users Logo.png";
 import lightningLogo from "../assets/Lightning Logo.png";
 import bookLogo from "../assets/Book Logo.png";
 import contactUsImage from "../assets/contact us section.png";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function LandingPage() {
+    const { loginWithRedirect, isAuthenticated } = useAuth0();
+    const navigate = useNavigate();
+
+    if (isAuthenticated) navigate("/app")
+
     return (
         <>
             <Navbar homeRoute="/">
                 <ul className="flex items-center space-x-5">
                     <li>
-                        <Link to="/app">Sign In</Link>
-                    </li>
-                    <li>
-                        <Link to="/app" className="text-white bg-gray-800 hover:bg-gray-950 p-2 rounded">Get
-                            Started</Link>
+                        <a href="#" onClick={() => loginWithRedirect()}>Sign In</a>
                     </li>
                 </ul>
             </Navbar>
