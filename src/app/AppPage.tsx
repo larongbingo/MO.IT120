@@ -4,7 +4,7 @@ import photoIcon from "../assets/Photo.png";
 import calendar from "../assets/Calendar.png";
 import Posts, { defaultPosts, type PostProps } from "./components/Post";
 import SuggestionsSidebar from "./components/SuggestionsSidebar.tsx";
-
+import { useAuth0 } from "@auth0/auth0-react";
 
 function AppPage() {
     const [posts, setPosts] = useState<PostProps[]>(defaultPosts);
@@ -33,12 +33,11 @@ function AppPage() {
                 <AddPostForm onAdd={handleAddPost}/>
                 <Posts posts={posts} />
             </div>
-            <SuggestionsSidebar/>
         </main>
     )
 }
 
-function AddPostForm({ onAdd }: { onAdd: (content: string, imageBase64?: string) => void }) {
+    const { user } = useAuth0();
     const [content, setContent] = useState("");
     const [imageBase64, setImageBase64] = useState<string | undefined>(undefined);
     const fileInputRef = useRef<HTMLInputElement | null>(null);
@@ -70,7 +69,7 @@ function AddPostForm({ onAdd }: { onAdd: (content: string, imageBase64?: string)
     return (
         <form onSubmit={submit} id="createPost" className="rounded-2xl border-2 border-gray-200 p-4 flex space-x-3 bg-white">
             <div>
-                <img src={profilePicture} alt="Profile Picture" className="rounded-full w-14"/>
+                <img src={user?.picture} alt="Profile Picture" className="rounded-full w-14"/>
             </div>
             <div className="w-full space-y-3">
                 <textarea name="Message" id="Message" rows={4}
