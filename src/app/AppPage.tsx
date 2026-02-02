@@ -2,6 +2,7 @@
 import photo from "../assets/Photo.png";
 import calendar from "../assets/Calendar.png";
 import Posts from "./components/Post";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function AppPage() {
     return (
@@ -15,10 +16,11 @@ function AppPage() {
 }
 
 function AddPostForm() {
+    const { user } = useAuth0();
     return (
         <form action="" id="createPost" className="rounded-2xl border-2 border-gray-200 p-4 flex space-x-3">
             <div>
-                <img src={profilePicture} alt="Profile Picture" className="rounded-full w-14"/>
+                <img src={user?.picture} alt="Profile Picture" className="rounded-full w-14"/>
             </div>
             <div className="w-full space-y-5">
                         <textarea name="Message" id="Message" rows={5}

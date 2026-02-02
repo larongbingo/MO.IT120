@@ -1,5 +1,4 @@
 ﻿import Navbar from "../../components/Navbar.tsx";
-import profilePicture from "../../assets/profile pic.png";
 import homeLogo from "../../assets/Home.png";
 import usersLogo from "../../assets/Users.png";
 import bookLogo from "../../assets/Book.png";
@@ -10,15 +9,15 @@ import ScheduleCard, {type Schedule} from "../components/ScheduleCard.tsx";
 import { useAuth0 } from "@auth0/auth0-react";
 
 function AppLayout() {
-    const { logout } = useAuth0();
-
+    const { logout, user } = useAuth0();
+    console.log(user)
     return (
         <>
             <Navbar homeRoute="/app">
                 <ul className="flex items-center space-x-5">
                     <li>
                         <Link to="/app/profile">
-                            <img src={profilePicture} alt="Profile Picture"
+                            <img src={user?.picture} alt="Profile Picture"
                                  className="rounded-full w-14"/>
                         </Link>
                     </li>
