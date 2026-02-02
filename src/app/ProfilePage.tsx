@@ -3,20 +3,40 @@ import calendarIcon from "../assets/Calendar.png";
 import Posts from "./components/Post";
 import type { PostProps } from "./components/Post";
 import userPhoto from "../assets/User.png";
+import { useAuth0 } from "@auth0/auth0-react";
+import { getConnectlyProfile, type ConnectlyUser } from "../api";
+import { useEffect, useState } from "react";
 
 type Course = { code: string; title: string; instructor?: string };
 type StudyGroup = { id: number; name: string; meeting: string };
 type EventItem = { id: number; title: string; time: string };
 
 export default function ProfilePage() {
+    const { user, getAccessTokenSilently, isAuthenticated } = useAuth0();
+    const [ fetchedProfile, setFetchedProfile ] = useState<ConnectlyUser>();
+
+    useEffect(() => {
+        const callApi = async () => {
+            if (isAuthenticated) {
+                const token = await getAccessTokenSilently()
+                const response = await getConnectlyProfile(token)
+                setFetchedProfile(response)
+                console.log(response)
+            }
+        }
+
+        callApi()
+    }, [isAuthenticated])
+
+
     const profile = {
-        name: "Renz Pagulayan",
-        handle: "@larongbingo",
-        university: "Mapua Malayan Digital College",
-        major: "B.S. Information Technology",
-        year: "Irregular",
+        name: fetchedProfile?.firstName + " " + fetchedProfile?.lastName,
+        handle: "@" + fetchedProfile?.displayName,
+        university: fetchedProfile?.school,
+        major: fetchedProfile?.major,
+        year: fetchedProfile?.year,
         gpa: "3.8",
-        bio: "Mobile Developer.",
+        bio: fetchedProfile?.title,
     };
 
     const courses: Course[] = [
@@ -54,7 +74,7 @@ export default function ProfilePage() {
                 <section className="bg-white rounded-2xl border border-gray-100 p-6 flex flex-col md:flex-row items-center md:items-start gap-6">
                     <div className="flex-shrink-0">
                         <img
-                            src={profilePicture}
+                            src={user?.picture}
                             alt="Profile"
                             className="w-28 h-28 rounded-full object-cover border border-gray-200"
                         />
