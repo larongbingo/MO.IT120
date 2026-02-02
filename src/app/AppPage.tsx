@@ -28,7 +28,7 @@ function AppPage() {
     };
 
     return (
-        <main className="flex-1 mx-auto flex xl:container xl:mx-auto">
+        <main className="w-4xl container mx-auto">
             <div className="p-5 w-full space-y-5">
                 <AddPostForm onAdd={handleAddPost}/>
                 <Posts posts={posts} />
