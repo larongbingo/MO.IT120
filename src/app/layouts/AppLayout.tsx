@@ -1,7 +1,6 @@
 ﻿import Navbar from "../../components/Navbar.tsx";
 import homeLogo from "../../assets/Home.png";
 import usersLogo from "../../assets/Users.png";
-import bookLogo from "../../assets/Book.png";
 import messageLogo from "../../assets/Message.png";
 import userLogo from "../../assets/User.png";
 import {Link, Outlet, useLocation} from "react-router-dom";

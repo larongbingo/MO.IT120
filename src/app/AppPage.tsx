@@ -3,7 +3,6 @@ import profilePicture from "../assets/profile pic.png";
 import photoIcon from "../assets/Photo.png";
 import calendar from "../assets/Calendar.png";
 import Posts, { defaultPosts, type PostProps } from "./components/Post";
-import SuggestionsSidebar from "./components/SuggestionsSidebar.tsx";
 import { useAuth0 } from "@auth0/auth0-react";
 
 function AppPage() {

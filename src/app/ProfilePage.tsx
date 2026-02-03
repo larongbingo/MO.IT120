@@ -1,5 +1,4 @@
-﻿import profilePicture from "../assets/profile pic.png";
-import calendarIcon from "../assets/Calendar.png";
+﻿import calendarIcon from "../assets/Calendar.png";
 import Posts from "./components/Post";
 import type { PostProps } from "./components/Post";
 import userPhoto from "../assets/User.png";
