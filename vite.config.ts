@@ -8,5 +8,4 @@ export default defineConfig({
       react(),
       tailwindcss(),
   ],
-    base: "https://mo-it-120-cxh68db7u-renz-pagulayans-projects.vercel.app/"
 })
