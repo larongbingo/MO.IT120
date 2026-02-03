@@ -8,5 +8,5 @@ export default defineConfig({
       react(),
       tailwindcss(),
   ],
-    base: "https://moit120.thatonenoob.me/"
+    base: "https://mo-it-120-cxh68db7u-renz-pagulayans-projects.vercel.app/"
 })
