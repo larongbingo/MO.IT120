@@ -8,12 +8,27 @@ import lightningLogo from "../assets/Lightning Logo.png";
 import bookLogo from "../assets/Book Logo.png";
 import contactUsImage from "../assets/contact us section.png";
 import { useAuth0 } from "@auth0/auth0-react";
+import { useEffect } from "react";
+import { getConnectlyProfile } from "../api.ts";
 
 function LandingPage() {
-    const { loginWithRedirect, isAuthenticated } = useAuth0();
+    const { loginWithRedirect, isAuthenticated, getAccessTokenSilently } = useAuth0();
     const navigate = useNavigate();
 
-    if (isAuthenticated) navigate("/app")
+    useEffect(() => {
+        const checkIfUserProfileExists = async () => {
+            if (isAuthenticated) {
+                var user = await getConnectlyProfile(await getAccessTokenSilently())
+                if (user) {
+                    navigate("/app");
+                } else {
+                    navigate("/firsttime");
+                }   
+            }
+        }
+
+        checkIfUserProfileExists();
+    }, [isAuthenticated]);
 
     return (
         <>

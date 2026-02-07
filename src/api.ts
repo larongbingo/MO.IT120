@@ -12,8 +12,34 @@ export async function getConnectlyProfile(jwt: string) {
         }
     )
 
+    if (!response.ok) {
+        return null;
+    }
+
     const json: ConnectlyUser = await response.json()
 
+    return json;
+}
+
+export async function createConnectlyProfile(jwt: string, profile: NewUserDto) {  
+    const response = await fetch(
+        `${BASE_URL}/api/users`,
+        {
+            method: "POST",
+            headers: {
+                "Authorization": `Bearer ${jwt}`,
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(profile),
+        } 
+    )
+
+    if (!response.ok) {
+        return null;
+    }
+    
+    const json: ConnectlyUser = await response.json()
+    
     return json;
 }
 
@@ -22,6 +48,9 @@ export type ConnectlyUser = {
     firstName: string;
     lastName: string;
     picture: string;
+} & NewUserDto
+
+export type NewUserDto = {
     displayName: string;
     title: string;
     major: string;
