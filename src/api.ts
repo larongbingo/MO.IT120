@@ -67,8 +67,24 @@ export async function createConnectlyPost(jwt: string, message: string, image: B
     return json;
 }
 
-export async function getConnectlyPosts() {
+export async function getConnectlyPosts(jwt: string) {
+    const response = await fetch(
+        `${BASE_URL}/api/posts/all`,
+        {
+            method: "GET",
+            headers: {
+                "Authorization": `Bearer ${jwt}`,
+                'Content-Type': 'application/json',
+            }
+        }
+    );
+    
+    if (!response.ok) {
+        return [];
+    }
 
+    const json: ConnectlyPost[] = await response.json();
+    return json;
 }
 
 export type ConnectlyPost = {

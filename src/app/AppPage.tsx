@@ -1,13 +1,45 @@
-﻿import React, { useRef, useState } from "react";
+﻿import React, { useEffect, useRef, useState } from "react";
 import profilePicture from "../assets/profile pic.png";
 import photoIcon from "../assets/Photo.png";
 import calendar from "../assets/Calendar.png";
 import Posts, { defaultPosts, type PostProps } from "./components/Post";
 import { useAuth0 } from "@auth0/auth0-react";
-import { createConnectlyPost } from "../api";
+import { createConnectlyPost, getConnectlyPosts, type ConnectlyPost } from "../api";
 
 function AppPage() {
     const [posts, setPosts] = useState<PostProps[]>(defaultPosts);
+    const { getAccessTokenSilently, isLoading, isAuthenticated } = useAuth0();
+
+    useEffect(() => {
+        const fetchPosts = async () => {
+            if (!isAuthenticated || isLoading) return;
+            
+            const token = await getAccessTokenSilently();
+            const connectlyPosts = await getConnectlyPosts(token);
+            
+            const mappedPosts: PostProps[] = connectlyPosts
+                .filter(post => post.user) // Filter out posts with null/undefined user
+                .map((post: ConnectlyPost) => ({
+                    id: parseInt(post.id),
+                    user: {
+                        name: post.user.displayName || `${post.user.firstName} ${post.user.lastName}` || post.user.email,
+                        course: post.user.major || "Student",
+                        year: post.user.year,
+                        profilePicture: post.user.picture,
+                        affiliation: post.user.title || "Student"
+                    },
+                    post: post.message,
+                    image: post.uri,
+                    likes: Number(post.likes),
+                    comments: 0,
+                    datePosted: new Date(post.createdAt)
+                }));
+            
+            setPosts(mappedPosts);
+        };
+        
+        fetchPosts();
+    }, [isAuthenticated, isLoading, getAccessTokenSilently]);
 
     const handleAddPost = (content: string, imageBase64?: string) => {
         const newPost: PostProps = {
