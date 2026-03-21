@@ -14,7 +14,7 @@ export default function FirstTimeLoginPage() {
   const [major, setMajor] = useState("");
   const [year, setYear] = useState("");
   const [school, setSchool] = useState("");
-  const [saved, setSaved] = useState(false);
+  const [_, setSaved] = useState(false);
   const [attemptedSubmit, setAttemptedSubmit] = useState(false);
   const [touched, setTouched] = useState<Record<string, boolean>>({});
 

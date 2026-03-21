@@ -12,7 +12,7 @@ type EventItem = { id: number; title: string; time: string };
 
 export default function ProfilePage() {
     const { user, getAccessTokenSilently, isAuthenticated } = useAuth0();
-    const [ fetchedProfile, setFetchedProfile ] = useState<ConnectlyUser>();
+    const [ fetchedProfile, setFetchedProfile ] = useState<ConnectlyUser | null>();
 
     useEffect(() => {
         const callApi = async () => {
