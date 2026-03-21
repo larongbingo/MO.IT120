@@ -43,6 +43,43 @@ export async function createConnectlyProfile(jwt: string, profile: NewUserDto) {
     return json;
 }
 
+export async function createConnectlyPost(jwt: string, message: string, image: Blob) {
+    const body = new FormData();
+    body.append("message", message);
+    body.append("file", image);
+
+    const response = await fetch(
+        `${BASE_URL}/api/posts`,
+        {
+            method: "POST",
+            headers: {
+                "Authorization": `Bearer ${jwt}`,
+            },
+            body: body,
+        }
+    );
+
+    if (!response.ok) {
+        return null;
+    }
+
+    const json: ConnectlyPost = await response.json();
+    return json;
+}
+
+export async function getConnectlyPosts() {
+
+}
+
+export type ConnectlyPost = {
+    id: string;
+    user: ConnectlyUser;
+    message: string;
+    likes: Number;
+    createdAt: Date;
+    uri: string;
+}
+
 export type ConnectlyUser = {
     email: string;
     firstName: string;

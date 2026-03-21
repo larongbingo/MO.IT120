@@ -4,6 +4,7 @@ import photoIcon from "../assets/Photo.png";
 import calendar from "../assets/Calendar.png";
 import Posts, { defaultPosts, type PostProps } from "./components/Post";
 import { useAuth0 } from "@auth0/auth0-react";
+import { createConnectlyPost } from "../api";
 
 function AppPage() {
     const [posts, setPosts] = useState<PostProps[]>(defaultPosts);
@@ -37,9 +38,10 @@ function AppPage() {
 }
 
 function AddPostForm({ onAdd }: { onAdd: (content: string, imageBase64?: string) => void }) {
-    const { user } = useAuth0();
+    const { user, getAccessTokenSilently } = useAuth0();
     const [content, setContent] = useState("");
     const [imageBase64, setImageBase64] = useState<string | undefined>(undefined);
+    const [imageBlob, setImageBlob] = useState<Blob | undefined>(undefined);
     const fileInputRef = useRef<HTMLInputElement | null>(null);
 
     const openFilePicker = () => {
@@ -49,6 +51,7 @@ function AddPostForm({ onAdd }: { onAdd: (content: string, imageBase64?: string)
     const handleFileChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
         const file = e.target.files?.[0];
         if (!file) return;
+        setImageBlob(file);
         const reader = new FileReader();
         reader.onload = () => {
             const result = reader.result as string;
@@ -57,12 +60,16 @@ function AddPostForm({ onAdd }: { onAdd: (content: string, imageBase64?: string)
         reader.readAsDataURL(file);
     };
 
-    const submit = (e: React.FormEvent) => {
+    const submit = async (e: React.FormEvent) => {
         e.preventDefault();
         if (!content.trim() && !imageBase64) return;
+        const token = await getAccessTokenSilently();
+        const image = imageBlob || new Blob();
+        await createConnectlyPost(token, content.trim(), image);
         onAdd(content.trim(), imageBase64);
         setContent("");
         setImageBase64(undefined);
+        setImageBlob(undefined);
         if (fileInputRef.current) fileInputRef.current.value = "";
     };
 
