@@ -21,7 +21,11 @@ function AppLayout() {
                         </Link>
                     </li>
                     <li>
-                        <a href="#" onClick={() => logout()}>Logout</a>
+                        <a href="#" onClick={() => logout({
+                            logoutParams: {
+                                returnTo: window.location.origin,
+                            }
+                        })}>Logout</a>
                     </li>
                 </ul>
             </Navbar>
