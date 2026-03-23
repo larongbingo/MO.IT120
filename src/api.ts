@@ -84,7 +84,7 @@ export async function getConnectlyPosts(jwt: string) {
     }
 
     const json: ConnectlyPost[] = await response.json();
-    return json;
+    return json.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
 }
 
 export type ConnectlyPost = {
